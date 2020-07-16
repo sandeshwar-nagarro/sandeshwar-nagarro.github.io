@@ -1,0 +1,13 @@
+.display-cover {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 5% auto;
+  position: relative; */
+}
+
+video {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
