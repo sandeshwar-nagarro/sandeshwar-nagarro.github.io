@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { AppService } from "../app.service";
 
 @Component({
@@ -9,15 +9,17 @@ import { AppService } from "../app.service";
 export class AvailableCamerasComponent implements OnInit {
   cameraOptions = [];
 
+  @Output() cameraSelected = new EventEmitter<string>();
+
   constructor(private readonly appService: AppService) {}
 
   ngOnInit(): void {
-    const defaultOption = new Option();
-    defaultOption.label = "Select camera";
-    this.cameraOptions.push(defaultOption);
-
     this.appService
-      .getCameraSelection()
-      .then((options) => (this.cameraOptions = [defaultOption, ...options]));
+      .getAvailableCameras()
+      .then((options) => (this.cameraOptions = [...options]));
+  }
+
+  onCameraSelected(deviceId: string) {
+    this.cameraSelected.emit(deviceId);
   }
 }

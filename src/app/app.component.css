@@ -1,10 +1,15 @@
-.display-cover {
-  /* display: flex;
+.content {
+  display: flex;
   justify-content: center;
   align-items: center;
   width: 70%;
-  margin: 5% auto;
-  position: relative; */
+  margin: 2% auto;
+  position: relative;
+}
+
+.menu {
+  align-items: center;
+  margin-right: 40px;
 }
 
 video {

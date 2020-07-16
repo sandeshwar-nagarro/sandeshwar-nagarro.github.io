@@ -5,7 +5,10 @@ import { AppComponent } from "./app.component";
 import { VideoControlsComponent } from "./video-controls/video-controls.component";
 import { AvailableCamerasComponent } from "./available-cameras/available-cameras.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatSelectModule } from "@angular/material/select";
+import { MatDividerModule } from "@angular/material/divider";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -13,7 +16,14 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     VideoControlsComponent,
     AvailableCamerasComponent,
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, MatFormFieldModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatIconModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

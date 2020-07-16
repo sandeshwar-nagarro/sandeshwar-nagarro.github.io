@@ -1,6 +1,26 @@
-<div class="display-cover">
-  <app-available-cameras></app-available-cameras>
-  <app-video-controls></app-video-controls>
+<div class="wrapper">
+  <mat-toolbar color="primary">
+    <span>Assigment</span>
+  </mat-toolbar>
 
-  <video autoplay></video>
+  <div class="content">
+    <div class="menu">
+      <app-available-cameras
+        (cameraSelected)="
+          startStream({
+            video: true,
+            deviceId: {
+              exact: $event
+            }
+          })
+        "
+        class="camera-options"
+      ></app-available-cameras>
+      <!-- <app-video-controls class="video-controls"></app-video-controls> -->
+    </div>
+
+    <mat-divider></mat-divider>
+    <br />
+    <video *ngIf="streamSrc" [srcObject]="streamSrc" autoplay></video>
+  </div>
 </div>
