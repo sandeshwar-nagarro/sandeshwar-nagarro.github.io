@@ -21,6 +21,12 @@
 
     <mat-divider></mat-divider>
     <br />
-    <video *ngIf="streamSrc" [srcObject]="streamSrc" autoplay></video>
+    <video
+      id="video"
+      *ngIf="streamSrc"
+      [srcObject]="streamSrc"
+      autoplay
+    ></video>
+    <canvas id="canvas"></canvas>
   </div>
 </div>
